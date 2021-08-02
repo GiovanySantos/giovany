@@ -1,0 +1,15 @@
+.home {
+    text-align: center;
+    margin: 50px;
+    h2 {
+        font-family: var(--is-font-secondary);
+        font-size: 100px;
+    }
+    p {
+        margin-top: 50px;
+        font-size: 30px;
+    }
+    img {
+        max-width: 400px;
+    }
+}

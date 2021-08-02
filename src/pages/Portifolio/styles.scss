@@ -1,0 +1,23 @@
+img {
+    max-width: 50px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid var(--is-backgroundSecondary);
+
+    .tabs {
+        padding: 1em 1em;
+        cursor: pointer;
+        margin: 0 1em;
+    }
+    
+    .active-tab {
+        background: var(--is-backgroundSecondary);
+        border-top-right-radius: 30px;
+        border-top-left-radius: 30px;
+    }
+}

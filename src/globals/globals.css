@@ -1,0 +1,27 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+
+:root {
+    --is-300: 300;
+    --is-400: 400;
+    --is-600: 600;
+    --is-700: 700;
+
+    --is-primary: #FFFFFF;
+    --is-secondary: #371598;
+    --is-background: #1D0531;
+    --is-backgroundSecondary: #11031d;
+
+    --is-font-primary: 'Open Sans', sans-serif;
+    --is-font-secondary: 'Nothing You Could Do', cursive;
+}
+
+body {
+    font-family: var(--is-font-primary);
+    font-weight: var(--is-400);
+    font-size: 20px;
+    color: var(--is-primary);
+    background: var(--is-background);
+    line-height: 1.4;
+}
