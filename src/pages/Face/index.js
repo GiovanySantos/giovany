@@ -15,6 +15,7 @@ const Face = () => {
                     </p>
                 </Col>
                 <Col md={6}>
+                    {/* carrossel */}
                     <img src={bgImg} alt="background" />
                 </Col>
             </Row>
