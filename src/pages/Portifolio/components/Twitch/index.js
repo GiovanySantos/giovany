@@ -3,7 +3,7 @@ import React from 'react'
 const Twitch = () => {
     return (
         <>
-            Twitch CARAIO
+            <p>Canal em construção</p>
         </>
     )
 }

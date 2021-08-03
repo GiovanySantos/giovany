@@ -1,9 +1,16 @@
 import React from 'react'
+import Iframe from 'react-iframe'
 
 const Git = () => {
     return (
         <>
-            <iframe title="Git" src="https://github.com/GiovanySantos" width="100%" height="50%" />
+            <Iframe url="https://github.com/GiovanySantos?tab=repositories"
+                width="450px"
+                height="450px"
+                id="myId"
+                className="myClassname"
+                display="initial"
+                position="relative" />
         </>
     )
 }

@@ -8,20 +8,22 @@ import twitch from '../../../statics/img/twitch.png'
 const dataTabs = [
     {
         id: 1,
-        image: git
+        image: git,
+        link: 'https://github.com/GiovanySantos?tab=repositories'
     },
     {
         id: 2,
-        image: linkedin
+        image: linkedin,
+        link: 'https://www.linkedin.com/in/giovanysantos/'
     },
-    {
-        id: 3,
-        image: twitter
-    },
-    {
-        id: 4,
-        image: insta
-    },
+    // {
+    //     id: 3,
+    //     image: twitter
+    // },
+    // {
+    //     id: 4,
+    //     image: insta
+    // },
     {
         id: 5,
         image: youtube

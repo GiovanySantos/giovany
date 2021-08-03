@@ -3,7 +3,7 @@ import React from 'react'
 const Youtube = () => {
     return (
         <>
-            Youtube CARAIO
+            <p>Canal em construção</p>
         </>
     )
 }
