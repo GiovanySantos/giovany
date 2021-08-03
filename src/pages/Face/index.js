@@ -8,10 +8,9 @@ const Face = () => {
         <Container className="home">
             <Row>
                 <Col md={6}>
-                    <h2>Seu site</h2>
-                    <h2>Seu jeito</h2>
+                    <h2>Seu site<br />Seu jeito</h2>
                     <p>
-                        Planejamos o design e as funcionalidades juntos e montamos seu orçamento, faça conosco e faça do seu jeito!
+                        Planejamos o design e as funcionalidades juntos e criamos um site que é a cara do seu negócio
                     </p>
                 </Col>
                 <Col md={6}>
