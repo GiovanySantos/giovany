@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import Home from './screens/Home';
-import Portfolio from './screens/Portfolio';
-import About from './screens/About';
-import { motion } from 'framer-motion';
+import React from 'react';
+import Title from './Title';
+// import Home from './screens/Home';
+// import Portfolio from './screens/Portfolio';
+// import About from './screens/About';
+// import { motion } from 'framer-motion';
 
 export enum EnumPage {
   Home = 0,
@@ -11,14 +12,11 @@ export enum EnumPage {
 }
 
 const Blog: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<EnumPage>(EnumPage.Home);
-
   return (
-    <div className="">
-      <div data-testid="home-page">
-        <Home setCurrentPage={setCurrentPage} />
-      </div>
-      {currentPage !== EnumPage.Home && (
+    <div className="flex items-center justify-center max-w-full">
+      <Title />
+      {/* <Home setCurrentPage={setCurrentPage} /> */}
+      {/* {currentPage !== EnumPage.Home && (
         <div className="" data-testid="switcher">
           <motion.div
             hidden={currentPage !== EnumPage.Portfolio}
@@ -43,7 +41,7 @@ const Blog: React.FC = () => {
             {currentPage === EnumPage.About && <About />}
           </motion.div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

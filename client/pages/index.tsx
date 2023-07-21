@@ -9,27 +9,24 @@ export default function Home() {
   const [language, setLanguage] =
     useState<EnumLanguageAvaliable>(INITIAL_VALUE);
   const [mounted, setMounted] = useState(false);
-
-  const value = useMemo(() => ({ language, setLanguage }), [language]);
+  const lang = useMemo(() => ({ language, setLanguage }), [language]);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return null;
-  }
+  if (!mounted) return null;
 
   return (
-    <LanguageContext.Provider value={value}>
+    <LanguageContext.Provider value={lang}>
       <Meta />
-      <main className="flex flex-col bg-gradient-to-r from-primary to-p_gradient dark:bg-gradient-to-r dark:from-secondary dark:to-s_gradient bg-animation">
-        <nav className="">
-          <Sidebar />
-        </nav>
-        <section className="">
+      <main className="flex justify-between h-screen max-w-screen bg-gradient-to-r from-primary to-p_gradient dark:bg-gradient-to-r dark:from-secondary dark:to-s_gradient bg-animation">
+        <div className="grow">
           <Blog />
-        </section>
+        </div>
+        <div className="flex-none">
+          <Sidebar />
+        </div>
       </main>
     </LanguageContext.Provider>
   );

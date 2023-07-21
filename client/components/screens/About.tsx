@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Content from '../utils/Content';
 import { aboutPageContentKeys } from '../utils/ck';
 import Image from 'next/image';
-import ProfilePic from './../../assets/profile.jpg';
+import ProfilePic from './../../assets/profile.webp';
 import { LanguageContext } from '../../contexts/LanguageContext';
 
 const About: React.FC = () => {

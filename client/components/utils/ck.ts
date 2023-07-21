@@ -12,8 +12,8 @@ export const Translation = [
   },
   {
     key: 'home-web',
-    pt: 'Desenvolvedor fullstack',
-    en: 'Fullstck software engineer',
+    pt: 'Desenvolvedor web/backend',
+    en: 'Web/backend software engineer',
   },
   {
     key: 'portifolio',
@@ -45,8 +45,8 @@ export const homePageContentKeys: ckType[] = [
   },
   {
     key: 'home-web',
-    pt: 'Desenvolvedor fullstack',
-    en: 'Fullstck software engineer',
+    pt: 'Desenvolvedor web/backend',
+    en: 'Web/backend software engineer',
   },
   {
     key: 'portifolio',
