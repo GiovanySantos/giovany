@@ -1,5 +1,7 @@
 import React from 'react';
-import Title from './Title';
+import Header from './Header';
+import IconBox from './IconsBox';
+import ButtonsBox from './ButtonsBox';
 // import Home from './screens/Home';
 // import Portfolio from './screens/Portfolio';
 // import About from './screens/About';
@@ -14,7 +16,11 @@ export enum EnumPage {
 const Blog: React.FC = () => {
   return (
     <div className="flex items-center justify-center max-w-full">
-      <Title />
+      <div className="flex flex-col p-5 text-center gap-7">
+        <Header />
+        <IconBox />
+        <ButtonsBox />
+      </div>
       {/* <Home setCurrentPage={setCurrentPage} /> */}
       {/* {currentPage !== EnumPage.Home && (
         <div className="" data-testid="switcher">

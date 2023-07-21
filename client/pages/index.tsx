@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <LanguageContext.Provider value={lang}>
       <Meta />
-      <main className="flex justify-between h-screen max-w-screen bg-gradient-to-r from-primary to-p_gradient dark:bg-gradient-to-r dark:from-secondary dark:to-s_gradient bg-animation">
+      <main className="flex justify-between h-screen mx-auto overflow-hidden bg-white shadow-md md:w-screen rounded-xl bg-gradient-to-r from-primary to-p_gradient dark:bg-gradient-to-r dark:from-secondary dark:to-s_gradient bg-animation">
         <div className="grow">
           <Blog />
         </div>
