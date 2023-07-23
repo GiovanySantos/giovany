@@ -1,0 +1,35 @@
+{
+  "homePage": {
+    "title": {
+      "ptBR": "Giovany Santos",
+      "en": "Giovany Santos"
+    },
+    "subTitle": {
+      "ptBR": "Desenvolvedor web/backend",
+      "en": "Web/backend software engineer"
+    },
+    "buttons": [
+      {
+        "ptBR": "Projetos",
+        "en": "Projects"
+      },
+      {
+        "ptBR": "Carreira",
+        "en": "Carreer"
+      },
+      {
+        "ptBR": "Quero um site",
+        "en": "I want a website"
+      }
+    ]
+  },
+  "modalProjects": {
+    "": ""
+  },
+  "modalCarrer": {
+    "": ""
+  },
+  "modalContact": {
+    "": ""
+  }
+}

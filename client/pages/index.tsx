@@ -1,16 +1,31 @@
 import { useEffect, useMemo, useState } from 'react';
 import Blog from '../components/Blog';
-import Sidebar from '../components/Sidebar/Sidebar';
+import Sidebar from '../components/Sidebar';
 import { INITIAL_VALUE, LanguageContext } from '../contexts/LanguageContext';
-import { EnumLanguageAvaliable } from '../components/types/enums';
+import { EnumLanguageAvaliable } from '../types/enums';
 import Meta from '../components/Meta';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import { HomePageInternationalization, InternationalizationApiResponseType } from '../types/types';
+import { HomePageInternationalizationContext } from '../contexts/Internationalization/HomePageContext';
 
-export default function Home() {
+interface ISSRProps {
+  data: InternationalizationApiResponseType,
+}
+
+export const getServerSideProps: GetServerSideProps<ISSRProps> = async () => {
+  const res = await fetch('http://localhost:3001/')
+  const data: InternationalizationApiResponseType = await res.json()
+  return { props: { data } }
+}
+
+export default function Home({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+
   const [language, setLanguage] =
     useState<EnumLanguageAvaliable>(INITIAL_VALUE);
   const [mounted, setMounted] = useState(false);
-  const lang = useMemo(() => ({ language, setLanguage }), [language]);
+  const [homePageKeys] = useState<HomePageInternationalization>(data.homePage);
 
+  const lang = useMemo(() => ({ language, setLanguage }), [language])
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -19,15 +34,17 @@ export default function Home() {
 
   return (
     <LanguageContext.Provider value={lang}>
-      <Meta />
-      <main className="flex justify-between h-screen mx-auto overflow-hidden bg-white shadow-md md:w-screen rounded-xl bg-gradient-to-r from-primary to-p_gradient dark:bg-gradient-to-r dark:from-secondary dark:to-s_gradient bg-animation">
-        <div className="grow">
-          <Blog />
-        </div>
-        <div className="flex-none">
-          <Sidebar />
-        </div>
-      </main>
+      <HomePageInternationalizationContext.Provider value={{ homePageKeys }}>
+        <Meta />
+        <main className="flex justify-between h-screen mx-auto overflow-hidden bg-white shadow-md md:w-screen bg-gradient-to-r from-primary to-p_gradient dark:bg-gradient-to-r dark:from-secondary dark:to-s_gradient bg-animation">
+          <div className="grow">
+            <Blog />
+          </div>
+          <div className="flex-none">
+            <Sidebar />
+          </div>
+        </main>
+      </HomePageInternationalizationContext.Provider>
     </LanguageContext.Provider>
   );
 }

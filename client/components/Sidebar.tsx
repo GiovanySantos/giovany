@@ -3,7 +3,7 @@ import { useTheme } from 'next-themes';
 import { BsWhatsapp, BsLinkedin, BsGithub } from 'react-icons/bs';
 import { MdEmail } from 'react-icons/md';
 import { BiMoon, BiSun } from 'react-icons/bi';
-import { LanguageContext } from '../../contexts/LanguageContext';
+import { LanguageContext } from '../contexts/LanguageContext';
 import { EnumLanguageAvaliable } from '../types/enums';
 
 const Sidebar: React.FC = () => {
@@ -47,11 +47,19 @@ const Sidebar: React.FC = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  }, []);
+
   return (
     <div className="grid justify-center m-3 transition duration-300 delay-150 bg-transparent">
       <ul className="mb-10 space-y-5 list-none sm:mb-48">
         <li className="mt-4">
-          <span
+          <button
             data-testid="theme-toggler"
             className="focus:outline-none"
             onClick={() => setTheme(isDark() ? 'light' : 'dark')}
@@ -62,10 +70,10 @@ const Sidebar: React.FC = () => {
             ) : (
               <BiMoon className={iconClass} />
             )}
-          </span>
+          </button>
         </li>
         <li>
-          <span
+          <button
             aria-label="Language toggle"
             data-testid="language-toggler"
             className="focus:outline-none"
@@ -92,7 +100,7 @@ const Sidebar: React.FC = () => {
                 EN
               </p>
             )}
-          </span>
+          </button>
         </li>
       </ul>
       <ul className="mb-16 space-y-5 list-none">

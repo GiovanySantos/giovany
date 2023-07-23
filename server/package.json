@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "repository": "./src",
+  "author": "Giovany Santos",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon ./src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "graphql": "^16.7.1",
+    "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.0"
+  }
+}

@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ButtonBlog from './ButtonBlog';
+import { HomePageInternationalizationContext } from '../contexts/Internationalization/HomePageContext';
+import { LanguageContext } from '../contexts/LanguageContext';
+import { EnumLanguageAvaliable } from '../types/enums';
 
 const ButtonsBox: React.FC = () => {
+  const { homePageKeys } = useContext(HomePageInternationalizationContext)
+  const { language } = useContext(LanguageContext)
   return (
     <div className="flex flex-col gap-4 py-10">
-      <button className="px-2 py-4 rounded-md bg-p_buttons text-primary hover:bg-p_buttons_hover hover:text-secondary dark:hover:bg-s_gradient dark:hover:text-primary dark:bg-s_buttons dark:text-secondary">
-        Projetos
-      </button>
-      <button className="px-2 py-4 rounded-md bg-p_buttons text-primary hover:bg-p_buttons_hover hover:text-secondary dark:hover:bg-s_gradient dark:hover:text-primary dark:bg-s_buttons dark:text-secondary">
-        Carreira
-      </button>
-      <button className="px-2 py-4 rounded-md bg-p_buttons text-primary hover:bg-p_buttons_hover hover:text-secondary dark:hover:bg-s_gradient dark:hover:text-primary dark:bg-s_buttons dark:text-secondary">
-        Faça um pedido
-      </button>
+      {
+        homePageKeys.buttons.map((item, key) => {
+          return (
+            <ButtonBlog key={key}>
+              {language === EnumLanguageAvaliable.pt ? item.ptBR : item.en}
+            </ButtonBlog>
+          )
+        })
+      }
     </div>
   );
 };

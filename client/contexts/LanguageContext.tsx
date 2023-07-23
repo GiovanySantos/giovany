@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { EnumLanguageAvaliable } from '../components/types/enums';
+import { EnumLanguageAvaliable } from '../types/enums';
 
 interface ILanguageContext {
   language: EnumLanguageAvaliable;

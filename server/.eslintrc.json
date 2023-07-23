@@ -1,24 +1,24 @@
 {
   "root": true,
   "extends": [
-    "airbnb-base",
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "airbnb-base",
+    "plugin:prettier/recommended"
   ],
   "env": {
-    "browser": true,
-    "node": false
+    "node": true
   },
-  "plugins": [
-    "@typescript-eslint",
-    "prettier"
-  ],
-  "parser": "@typescript-eslint/parser",
+  "globals": {
+    "expect": true
+  },
   "parserOptions": {
     "ecmaVersion": 2023,
     "sourceType": "module"
   },
+  "plugins": [
+    "prettier",
+    "import-no-duplicates-prefix-resolved-path"
+  ],
   "rules": {
     "prettier/prettier": "error",
     "arrow-body-style": "off",
@@ -30,6 +30,8 @@
       "error",
       "never"
     ],
-    "eqeqeq": "error"
+    "eqeqeq": "error",
+    "no-unused-vars": "error",
+    "no-unused-expressions": "error"
   }
 }
