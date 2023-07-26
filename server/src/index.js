@@ -1,6 +1,6 @@
 import { PORT } from "./settings.js"
 import express from 'express'
-import response from '../../response.json' assert { type: "json" };
+import response from './mock.json' assert { type: "json" };
 
 (async () => {
   const app = express()

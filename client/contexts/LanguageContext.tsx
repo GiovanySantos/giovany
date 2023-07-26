@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import React, { createContext } from 'react';
 import { EnumLanguageAvaliable } from '../types/enums';
 
 interface ILanguageContext {
@@ -10,9 +10,7 @@ const INITIAL_VALUE = EnumLanguageAvaliable.pt;
 
 const LanguageContext = createContext<ILanguageContext>({
   language: INITIAL_VALUE,
-  setLanguage: () => {
-    return;
-  },
+  setLanguage: () => {},
 });
 
 export { INITIAL_VALUE, LanguageContext };

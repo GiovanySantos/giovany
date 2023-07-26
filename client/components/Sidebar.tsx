@@ -30,30 +30,29 @@ const Sidebar: React.FC = () => {
   const handleOpenEmail = () => {
     window.open('mailto:giovany.santos@icloud.com');
   };
+  const getTheme = () =>
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+
+  const aaa = '';
 
   useEffect(() => {
-    try {
-      fetch('https://ipapi.co/json/')
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.country === 'BR') {
-            setLanguage?.(EnumLanguageAvaliable.pt);
-          } else {
-            setLanguage?.(EnumLanguageAvaliable.en);
-          }
-        });
-    } catch (err) {
-      console.error(err);
-    }
-  }, []);
+    fetch('https://ipapi.co/json/')
+      .then((res) => res.json())
+      .then((data) =>
+        data.country === 'BR'
+          ? setLanguage?.(EnumLanguageAvaliable.pt)
+          : setLanguage?.(EnumLanguageAvaliable.en)
+      )
+      .catch((error) => {
+        console.log(`Error getting country: ${error}`);
+      });
+  }, [setLanguage]);
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-    } else {
-      setTheme('light');
-    }
-  }, []);
+    setTheme(getTheme());
+  }, [setTheme]);
 
   return (
     <div className="grid justify-center m-3 transition duration-300 delay-150 bg-transparent">

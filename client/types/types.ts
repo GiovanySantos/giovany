@@ -1,14 +1,14 @@
 export type InternationalizationValue = {
-  ptBR?: String,
-  en?: String,
-}
+  ptBR?: String;
+  en?: String;
+};
 
 export type HomePageInternationalization = {
-  title: InternationalizationValue,
-  subTitle: InternationalizationValue
-  buttons: InternationalizationValue[]
-}
+  title: InternationalizationValue;
+  subTitle: InternationalizationValue;
+  buttons: InternationalizationValue[];
+};
 
 export type InternationalizationApiResponseType = {
-  homePage: HomePageInternationalization,
-}
+  homePage: HomePageInternationalization;
+};

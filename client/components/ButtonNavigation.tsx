@@ -1,7 +1,7 @@
 import React from 'react';
 
 type IProps = {
-  children: JSX.Element;
+  children: React.JSX.Element;
   onClick: () => void;
 };
 

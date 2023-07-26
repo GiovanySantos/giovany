@@ -1,31 +1,35 @@
 import { useEffect, useMemo, useState } from 'react';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Blog from '../components/Blog';
 import Sidebar from '../components/Sidebar';
 import { INITIAL_VALUE, LanguageContext } from '../contexts/LanguageContext';
 import { EnumLanguageAvaliable } from '../types/enums';
 import Meta from '../components/Meta';
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
-import { HomePageInternationalization, InternationalizationApiResponseType } from '../types/types';
+import {
+  HomePageInternationalization,
+  InternationalizationApiResponseType,
+} from '../types/types';
 import { HomePageInternationalizationContext } from '../contexts/Internationalization/HomePageContext';
 
 interface ISSRProps {
-  data: InternationalizationApiResponseType,
+  data: InternationalizationApiResponseType;
 }
 
 export const getServerSideProps: GetServerSideProps<ISSRProps> = async () => {
-  const res = await fetch('http://localhost:3001/')
-  const data: InternationalizationApiResponseType = await res.json()
-  return { props: { data } }
-}
+  const res = await fetch('http://localhost:8080/');
+  const data: InternationalizationApiResponseType = await res.json();
+  return { props: { data } };
+};
 
-export default function Home({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-
+export default function Home({
+  data,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const [language, setLanguage] =
     useState<EnumLanguageAvaliable>(INITIAL_VALUE);
   const [mounted, setMounted] = useState(false);
   const [homePageKeys] = useState<HomePageInternationalization>(data.homePage);
 
-  const lang = useMemo(() => ({ language, setLanguage }), [language])
+  const lang = useMemo(() => ({ language, setLanguage }), [language]);
   useEffect(() => {
     setMounted(true);
   }, []);
