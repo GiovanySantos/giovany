@@ -1,19 +1,19 @@
 import React, { createContext } from 'react';
-import { HomePageInternationalization } from '../../types/types';
+import { InternationalizationApiResponseType } from '../../types/types';
 
 interface InternationalizationHomePageContext {
-  homePageKeys: HomePageInternationalization;
-  setHomePageKeys?: React.Dispatch<
-    React.SetStateAction<HomePageInternationalization>
+  pageContent: InternationalizationApiResponseType;
+  setPageContent?: React.Dispatch<
+    React.SetStateAction<InternationalizationApiResponseType>
   >;
 }
 
-const INITIAL_VALUE = {} as HomePageInternationalization;
+const INITIAL_VALUE = {} as InternationalizationApiResponseType;
 
 const HomePageInternationalizationContext =
   createContext<InternationalizationHomePageContext>({
-    homePageKeys: INITIAL_VALUE,
-    setHomePageKeys: () => {},
+    pageContent: INITIAL_VALUE,
+    setPageContent: () => {},
   });
 
 export { INITIAL_VALUE, HomePageInternationalizationContext };

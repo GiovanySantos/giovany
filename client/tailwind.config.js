@@ -12,7 +12,8 @@ module.exports = {
       colors: {
         primary: '#eff9f9',
         p_buttons: '#094067',
-        p_buttons_hover: '#eff9f9',
+        p_buttons_text: '#eff9f9',
+        p_buttons_hover: '#b6c7e2',
         p_buttons_hover_text: '#094067',
         p_text: '#094067',
         p_gradient: '#b6c7e2',

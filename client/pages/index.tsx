@@ -5,19 +5,16 @@ import Sidebar from '../components/Sidebar';
 import { INITIAL_VALUE, LanguageContext } from '../contexts/LanguageContext';
 import { EnumLanguageAvaliable } from '../types/enums';
 import Meta from '../components/Meta';
-import {
-  HomePageInternationalization,
-  InternationalizationApiResponseType,
-} from '../types/types';
+import { InternationalizationApiResponseType } from '../types/types';
 import { HomePageInternationalizationContext } from '../contexts/Internationalization/HomePageContext';
+import getPageTextContent from '../utils';
 
 interface ISSRProps {
   data: InternationalizationApiResponseType;
 }
 
 export const getServerSideProps: GetServerSideProps<ISSRProps> = async () => {
-  const res = await fetch('http://localhost:8080/');
-  const data: InternationalizationApiResponseType = await res.json();
+  const data: InternationalizationApiResponseType = await getPageTextContent();
   return { props: { data } };
 };
 
@@ -27,7 +24,7 @@ export default function Home({
   const [language, setLanguage] =
     useState<EnumLanguageAvaliable>(INITIAL_VALUE);
   const [mounted, setMounted] = useState(false);
-  const [homePageKeys] = useState<HomePageInternationalization>(data.homePage);
+  const [pageContent] = useState<InternationalizationApiResponseType>(data);
 
   const lang = useMemo(() => ({ language, setLanguage }), [language]);
   useEffect(() => {
@@ -38,16 +35,16 @@ export default function Home({
 
   return (
     <LanguageContext.Provider value={lang}>
-      <HomePageInternationalizationContext.Provider value={{ homePageKeys }}>
+      <HomePageInternationalizationContext.Provider value={{ pageContent }}>
         <Meta />
-        <main className="flex justify-between h-screen mx-auto overflow-hidden bg-white shadow-md md:w-screen bg-gradient-to-r from-primary to-p_gradient dark:bg-gradient-to-r dark:from-secondary dark:to-s_gradient bg-animation">
-          <div className="grow">
+        <div className="flex justify-between h-screen mx-auto overflow-hidden md:w-screen bg-gradient-to-r from-primary to-p_gradient dark:bg-gradient-to-r dark:from-secondary dark:to-s_gradient bg-animation">
+          <main className="flex items-center justify-center w-full">
             <Blog />
-          </div>
-          <div className="flex-none">
+          </main>
+          <aside>
             <Sidebar />
-          </div>
-        </main>
+          </aside>
+        </div>
       </HomePageInternationalizationContext.Provider>
     </LanguageContext.Provider>
   );
