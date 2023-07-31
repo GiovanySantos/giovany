@@ -29,7 +29,10 @@ const Meta: React.FC = () => {
         content="Desenvolvedor fullstack Giovany Santos"
       />
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:image" content="../assets/profile.JPG" />
+      <meta
+        property="twitter:image"
+        content="https://unsplash.com/photos/UYsBCu9RP3Y"
+      />
 
       <meta property="og:title" content="Giovany Santos" />
       <meta
@@ -37,7 +40,10 @@ const Meta: React.FC = () => {
         content="Desenvolvedor fullstack Giovany Santos"
       />
       <meta property="og:url" content="https://www.giovany.com.br" />
-      <meta property="og:image" content="../assets/profile.webp" />
+      <meta
+        property="og:image"
+        content="https://unsplash.com/photos/UYsBCu9RP3Y"
+      />
       <meta property="og:type" content="article" />
       <meta property="og:site_name" content="Giovany Santos" />
       <link rel="icon" href="/favicon.ico" />
