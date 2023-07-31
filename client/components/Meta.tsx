@@ -37,8 +37,8 @@ const Meta: React.FC = () => {
         content="Desenvolvedor fullstack Giovany Santos"
       />
       <meta property="og:url" content="https://www.giovany.com.br" />
-      <meta property="og:image" content="../assets/profile.JPG" />
-      <meta property="og:type" content="website" />
+      <meta property="og:image" content="../assets/profile.webp" />
+      <meta property="og:type" content="article" />
       <meta property="og:site_name" content="Giovany Santos" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
