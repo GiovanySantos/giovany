@@ -57,7 +57,14 @@ const ModalIWantWebsite: React.FC<IProps> = ({
               <button
                 className="text-2xl cursor-pointer text-p_buttons dark:text-s_buttons"
                 aria-label="X"
-                onClick={handleCloseModal}
+                onClick={() => {
+                  handleCloseModal();
+                  setInputData({
+                    name: '',
+                    email: '',
+                    description: '',
+                  });
+                }}
               >
                 <AiFillCloseSquare />
               </button>
@@ -79,6 +86,9 @@ const ModalIWantWebsite: React.FC<IProps> = ({
                     {language === EnumLanguageAvaliable.pt
                       ? label.ptBR
                       : label.en}
+                    {fieldName === 'description' && (
+                      <span> {description.length}/2000</span>
+                    )}
                   </label>
                   {fieldName !== 'description' ? (
                     <input
@@ -88,24 +98,27 @@ const ModalIWantWebsite: React.FC<IProps> = ({
                           ? placeholder.ptBR
                           : placeholder.en
                       }
-                      className="w-full p-1 rounded-md bg-slate-300"
+                      className="w-full p-1 rounded-md bg-slate-300 dark:text-secondary"
                       type={type}
                       value={getInputValue(fieldName)}
                       onChange={(e) => handleChangeInput(fieldName, e)}
                     />
                   ) : (
-                    <textarea
-                      id={fieldName}
-                      placeholder={
-                        language === EnumLanguageAvaliable.pt
-                          ? placeholder.ptBR
-                          : placeholder.en
-                      }
-                      className="w-full p-1 bg-transparent rounded-md resize-none bg-slate-300"
-                      rows={4}
-                      value={getInputValue(fieldName)}
-                      onChange={(e) => handleChangeInput(fieldName, e)}
-                    />
+                    <div className="w-full">
+                      <textarea
+                        id={fieldName}
+                        placeholder={
+                          language === EnumLanguageAvaliable.pt
+                            ? placeholder.ptBR
+                            : placeholder.en
+                        }
+                        className="w-full p-1 bg-transparent rounded-md resize-none bg-slate-300 dark:text-secondary"
+                        rows={4}
+                        maxLength={2000}
+                        value={getInputValue(fieldName)}
+                        onChange={(e) => handleChangeInput(fieldName, e)}
+                      />
+                    </div>
                   )}
                 </div>
               );
@@ -115,7 +128,14 @@ const ModalIWantWebsite: React.FC<IProps> = ({
             <button
               disabled={!(name && email && description)}
               className="flex items-center justify-center gap-2 px-4 py-2 mt-5 rounded-md bg-p_buttons text-p_buttons_text md:hover:bg-p_buttons_hover md:hover:text-p_buttons_hover_text dark:bg-s_buttons dark:text-s_buttons_text dark:md:hover:bg-s_buttons_hover dark:md:hover:text-s_buttons_hover_text disabled:bg-slate-300 hover:disabled:bg-slate-300 disabled:text-slate-400 hover:disabled:text-slate-400 disabled:cursor-not-allowed"
-              onClick={() => handleSendMessage(name, email, description)}
+              onClick={() => {
+                handleSendMessage(name, email, description);
+                setInputData({
+                  name: '',
+                  email: '',
+                  description: '',
+                });
+              }}
             >
               <span>
                 <BiSolidSend />

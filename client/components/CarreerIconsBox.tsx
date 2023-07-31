@@ -10,6 +10,7 @@ const CarreerIconsBox: React.FC = () => {
       Safeweb
     </p>,
   ];
+
   return (
     <div className="flex flex-wrap items-center justify-center w-full text-center sm:gap-4">
       {icons.map((icon) => icon)}
