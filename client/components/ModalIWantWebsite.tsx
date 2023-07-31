@@ -112,7 +112,7 @@ const ModalIWantWebsite: React.FC<IProps> = ({
                             ? placeholder.ptBR
                             : placeholder.en
                         }
-                        className="w-full p-1 bg-transparent rounded-md resize-none bg-slate-300 dark:text-secondary"
+                        className="w-full p-1 bg-transparent rounded-md resize-none bg-slate-300 dark:text-secondary dark:bg-slate-300"
                         rows={4}
                         maxLength={2000}
                         value={getInputValue(fieldName)}
