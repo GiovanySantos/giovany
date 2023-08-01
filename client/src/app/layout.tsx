@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: 'Giovany',
     images: [
       {
-        url: '/img/profile.png',
+        url: 'https://www.giovany.com.br/img/profile.png',
         width: 240,
         height: 320,
         alt: 'Giovany Santos',
