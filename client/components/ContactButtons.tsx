@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsGithub, BsLinkedin } from 'react-icons/bs';
+import { BsGithub, BsLinkedin, BsWhatsapp } from 'react-icons/bs';
 import { MdEmail } from 'react-icons/md';
 
 const ContactButtons: React.FC = () => {
@@ -21,16 +21,16 @@ const ContactButtons: React.FC = () => {
           <MdEmail />
         </button>
       </li>
-      {/* <li>
+      <li>
         <button
           className={classes}
           aria-label="whatsapp"
-          onClick={() => handleClickIcon('https://wa.me/5192101771')}
+          onClick={() => handleClickIcon('https://wa.me/4888131725')}
           data-testid="whatsapp-icon"
         >
           <BsWhatsapp />
         </button>
-      </li> */}
+      </li>
       <li>
         <button
           className={classes}
