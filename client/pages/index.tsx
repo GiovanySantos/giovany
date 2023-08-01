@@ -4,7 +4,7 @@ import Blog from '../components/Blog';
 import Sidebar from '../components/Sidebar';
 import { INITIAL_VALUE, LanguageContext } from '../contexts/LanguageContext';
 import { EnumLanguageAvaliable } from '../types/enums';
-import Meta from '../components/Meta';
+import Meta from '../components/layout';
 import { InternationalizationApiResponseType } from '../types/types';
 import { HomePageInternationalizationContext } from '../contexts/Internationalization/HomePageContext';
 import getPageTextContent from '../utils';
