@@ -17,10 +17,20 @@ export const metadata: Metadata = {
     'fazer um site',
   ],
   openGraph: {
-    title: 'Giovany Santos',
-    description: 'Bem vindo ao site Giovany Santos',
+    title: 'Giovany',
+    description: 'Portfólio Giovany Santos',
     url: 'https://www.giovany.com.br',
-    images: ['./../assets/profile.webp'],
+    siteName: 'Giovany',
+    images: [
+      {
+        url: '/img/profile.webp',
+        width: 600,
+        height: 800,
+        alt: 'Giovany Santos',
+      },
+    ],
+    locale: 'pt_BR',
+    type: 'website',
   },
 };
 
