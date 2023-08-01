@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { useEffect, useMemo, useState } from 'react';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Blog from '../components/Blog';
