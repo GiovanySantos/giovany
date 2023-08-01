@@ -24,6 +24,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/img/profile.png',
+        width: 240,
+        height: 320,
         alt: 'Giovany Santos',
       },
     ],
