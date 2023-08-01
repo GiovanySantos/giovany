@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { ThemeProvider } from 'next-themes';
 import Blog from '../components/Blog';
 import Sidebar from '../components/Sidebar';
 import { INITIAL_VALUE, LanguageContext } from '../contexts/LanguageContext';
@@ -8,16 +9,6 @@ import EnumLanguageAvaliable from '../types/enums';
 import { InternationalizationApiResponseType } from '../types/types';
 import { HomePageInternationalizationContext } from '../contexts/Internationalization/HomePageContext';
 import getPageTextContent from '../utils';
-import './globals.css';
-
-// interface ISSRProps {
-//   data: InternationalizationApiResponseType;
-// }
-
-// export const getServerSideProps: GetServerSideProps<ISSRProps> = async () => {
-//   const data: InternationalizationApiResponseType = await getPageTextContent();
-//   return { props: { data } };
-// };
 
 export default function Home() {
   const [language, setLanguage] =
@@ -35,17 +26,19 @@ export default function Home() {
   if (!mounted) return null;
 
   return (
-    <LanguageContext.Provider value={lang}>
-      <HomePageInternationalizationContext.Provider value={{ pageContent }}>
-        <div className="flex justify-between h-screen mx-auto overflow-hidden md:w-screen bg-gradient-to-r from-primary to-p_gradient dark:bg-gradient-to-r dark:from-secondary dark:to-s_gradient bg-animation">
-          <main className="flex items-center justify-center w-full">
-            <Blog />
-          </main>
-          <aside>
-            <Sidebar />
-          </aside>
-        </div>
-      </HomePageInternationalizationContext.Provider>
-    </LanguageContext.Provider>
+    <ThemeProvider attribute="class">
+      <LanguageContext.Provider value={lang}>
+        <HomePageInternationalizationContext.Provider value={{ pageContent }}>
+          <div className="flex justify-between h-screen mx-auto overflow-hidden md:w-screen bg-gradient-to-r from-primary to-p_gradient dark:bg-gradient-to-r dark:from-secondary dark:to-s_gradient bg-animation">
+            <main className="flex items-center justify-center w-full">
+              <Blog />
+            </main>
+            <aside>
+              <Sidebar />
+            </aside>
+          </div>
+        </HomePageInternationalizationContext.Provider>
+      </LanguageContext.Provider>
+    </ThemeProvider>
   );
 }
