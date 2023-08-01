@@ -23,9 +23,7 @@ export const metadata: Metadata = {
     siteName: 'Giovany',
     images: [
       {
-        url: '/img/profile.webp',
-        width: 600,
-        height: 800,
+        url: '/img/profile.png',
         alt: 'Giovany Santos',
       },
     ],
