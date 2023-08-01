@@ -4,7 +4,6 @@ import Blog from '../components/Blog';
 import Sidebar from '../components/Sidebar';
 import { INITIAL_VALUE, LanguageContext } from '../contexts/LanguageContext';
 import { EnumLanguageAvaliable } from '../types/enums';
-import Meta from './layout';
 import { InternationalizationApiResponseType } from '../types/types';
 import { HomePageInternationalizationContext } from '../contexts/Internationalization/HomePageContext';
 import getPageTextContent from '../utils';
@@ -36,7 +35,6 @@ export default function Home({
   return (
     <LanguageContext.Provider value={lang}>
       <HomePageInternationalizationContext.Provider value={{ pageContent }}>
-        <Meta />
         <div className="flex justify-between h-screen mx-auto overflow-hidden md:w-screen bg-gradient-to-r from-primary to-p_gradient dark:bg-gradient-to-r dark:from-secondary dark:to-s_gradient bg-animation">
           <main className="flex items-center justify-center w-full">
             <Blog />
