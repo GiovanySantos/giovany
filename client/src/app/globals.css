@@ -10,11 +10,6 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-html,
-body {
-  min-height: 100vh;
-}
-
 /* For Webkit-based browsers (Chrome, Safari and Opera) */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

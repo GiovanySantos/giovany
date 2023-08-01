@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { BiMoon, BiSun } from 'react-icons/bi';
 import { LanguageContext } from '../contexts/LanguageContext';
-import { EnumLanguageAvaliable } from '../types/enums';
+import EnumLanguageAvaliable from '../types/enums';
 import ContactButtons from './ContactButtons';
 
 const Sidebar: React.FC = () => {

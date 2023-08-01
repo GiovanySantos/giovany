@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { HomePageInternationalizationContext } from '../contexts/Internationalization/HomePageContext';
 import { LanguageContext } from '../contexts/LanguageContext';
-import { EnumLanguageAvaliable } from '../types/enums';
+import EnumLanguageAvaliable from '../types/enums';
 
 const Header: React.FC = () => {
   const {

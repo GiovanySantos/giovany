@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import ButtonBlog from './ButtonBlog';
 import { HomePageInternationalizationContext } from '../contexts/Internationalization/HomePageContext';
 import { LanguageContext } from '../contexts/LanguageContext';
-import { EnumLanguageAvaliable } from '../types/enums';
+import EnumLanguageAvaliable from '../types/enums';
 import ModalIWantWebsite from './ModalIWantWebsite';
 import CarreerIconsBox from './CarreerIconsBox';
 

@@ -78,7 +78,7 @@ const mockResponse: InternationalizationApiResponseType = {
   },
 };
 
-export default async function getPageTextContent(): Promise<InternationalizationApiResponseType> {
+export default function getPageTextContent(): InternationalizationApiResponseType {
   const response: InternationalizationApiResponseType = mockResponse;
-  return response;
+  return { ...response };
 }

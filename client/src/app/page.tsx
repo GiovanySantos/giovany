@@ -1,29 +1,31 @@
+'use client';
+
 import { useEffect, useMemo, useState } from 'react';
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Blog from '../components/Blog';
 import Sidebar from '../components/Sidebar';
 import { INITIAL_VALUE, LanguageContext } from '../contexts/LanguageContext';
-import { EnumLanguageAvaliable } from '../types/enums';
+import EnumLanguageAvaliable from '../types/enums';
 import { InternationalizationApiResponseType } from '../types/types';
 import { HomePageInternationalizationContext } from '../contexts/Internationalization/HomePageContext';
 import getPageTextContent from '../utils';
+import './globals.css';
 
-interface ISSRProps {
-  data: InternationalizationApiResponseType;
-}
+// interface ISSRProps {
+//   data: InternationalizationApiResponseType;
+// }
 
-export const getServerSideProps: GetServerSideProps<ISSRProps> = async () => {
-  const data: InternationalizationApiResponseType = await getPageTextContent();
-  return { props: { data } };
-};
+// export const getServerSideProps: GetServerSideProps<ISSRProps> = async () => {
+//   const data: InternationalizationApiResponseType = await getPageTextContent();
+//   return { props: { data } };
+// };
 
-export default function Home({
-  data,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Home() {
   const [language, setLanguage] =
     useState<EnumLanguageAvaliable>(INITIAL_VALUE);
   const [mounted, setMounted] = useState(false);
-  const [pageContent] = useState<InternationalizationApiResponseType>(data);
+  const [pageContent] = useState<InternationalizationApiResponseType>(
+    getPageTextContent()
+  );
 
   const lang = useMemo(() => ({ language, setLanguage }), [language]);
   useEffect(() => {

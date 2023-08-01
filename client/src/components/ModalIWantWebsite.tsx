@@ -3,7 +3,7 @@ import { AiFillCloseSquare } from 'react-icons/ai';
 import { BiSolidSend } from 'react-icons/bi';
 import { HomePageInternationalizationContext } from '../contexts/Internationalization/HomePageContext';
 import { LanguageContext } from '../contexts/LanguageContext';
-import { EnumLanguageAvaliable } from '../types/enums';
+import EnumLanguageAvaliable from '../types/enums';
 
 interface IProps {
   handleCloseModal: () => void;
