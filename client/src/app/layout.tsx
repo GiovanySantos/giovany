@@ -4,6 +4,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Giovany Santos',
   description: 'Bem vindo ao portfolio de Giovany Santos',
+  metadataBase: new URL('https://giovany.com.br'),
   keywords: [
     'Desenvolvimento de software',
     'Agência digital',
