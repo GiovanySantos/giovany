@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: 'Giovany Santos',
     description: 'Bem vindo ao site Giovany Santos',
     url: 'https://www.giovany.com.br',
-    images: ['https://unsplash.com/photos/UYsBCu9RP3Y'],
+    images: ['./../assets/profile.webp'],
   },
 };
 
