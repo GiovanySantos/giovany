@@ -19,11 +19,14 @@ export default function Home() {
   );
 
   const lang = useMemo(() => ({ language, setLanguage }), [language]);
+
   useEffect(() => {
     setMounted(true);
   }, []);
 
   if (!mounted) return null;
+  console.log('@@', mounted);
+  console.log('@@', process.env.NODE_ENV);
 
   return (
     <ThemeProvider attribute="class">
