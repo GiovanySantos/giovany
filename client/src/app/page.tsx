@@ -26,7 +26,7 @@ export default function Home() {
 
   if (!mounted) return null;
   console.log('@@', mounted);
-  console.log('@@', process.env.NODE_ENV);
+  console.log('@@', process.env.DEVELOPMENT);
 
   return (
     <ThemeProvider attribute="class">
